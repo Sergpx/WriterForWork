@@ -156,10 +156,11 @@ def add_local_sheet():
 
 def add_all():
     global LOVE
-
+    error_label.config(text="")
     is_google = add_google_sheet()
     is_excel = add_local_sheet()
     if result(is_google, is_excel) != False:
+
         clear_entry()
         LOVE += 1
         if LOVE == 10:
@@ -194,7 +195,7 @@ def main():
     global num_entry, date_input_entry, out_num_entry, out_date_entry, sender_entry, agent_entry, content_entry, result_label, error_label, love_label
     root = tk.Tk()
     root.title("Для Анечки <3")
-    root.minsize(1000, 800)  # Устанавливаем разрешение окна
+    root.geometry('1000x800')  # Устанавливаем разрешение окна
 
     # Создаем поле ввода текста
 
